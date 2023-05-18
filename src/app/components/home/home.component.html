@@ -8,8 +8,10 @@
   <div class="search-button">
     <mat-icon class="tw-mt-16-px" aria-label="Search Icon">search</mat-icon>
     <input [formControl]="bookSearch" name="searchKey" type="text" placeholder="Search Books"
-      class="tw-border-0 tw-bg-inherit">
+      class="tw-border-0 tw-bg-inherit" [value]="bookSearch.value">
+    <button class="clear-button" *ngIf="bookSearch.value" (click)="clearSearch()">Clear</button>
   </div>
+
 </div>
 
 <div class="tw-flex tw-m-24-px">

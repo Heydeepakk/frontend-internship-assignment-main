@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
     this.bookSearch.valueChanges
       .pipe(
         debounceTime(300),
-        filter((query: string) => query.length >= 3),
+        filter((query: string) => query.length >= 1),
         switchMap((query: string) => this.searchBooks(query))
       )
       .subscribe((response: any) => {
@@ -55,6 +55,9 @@ export class HomeComponent implements OnInit {
     this.currentPage = event.pageIndex;
     this.pageSize = event.pageSize;
     this.updateDisplayedSearchResults();
+  }
+  clearSearch() {
+    this.bookSearch.setValue(''); // Clear the search key
   }
 
   updateDisplayedSearchResults() {
