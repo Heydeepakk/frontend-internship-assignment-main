@@ -25,11 +25,6 @@
 
   <div class="searchresult">
     <div class="tw-m-24-px">
-      <div class="tw-mb-24-px tw-text-24-px">Top {{ displayedSearchResults.length }} book{{
-        displayedSearchResults.length > 1 ? "s" : "" }}
-        on
-        {{ subjectName }}</div>
-
       <ng-container>
         <table mat-table class="table-view" [dataSource]="displayedSearchResults">
           <ng-container matColumnDef="title">
